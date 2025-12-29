@@ -1,11 +1,8 @@
-from typing import Dict
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-def extract_scraper(ENV_KEYS:Dict[str,str|None]) -> None:
-    base_url=ENV_KEYS.get("WEBSITE")
-
+def extract_scraper(base_url: str) -> None:
     all_products=[]
     all_prices=[]
 
@@ -21,7 +18,7 @@ def extract_scraper(ENV_KEYS:Dict[str,str|None]) -> None:
             for tag in soup.find_all(["h5"],class_=["product-name"]):
                 all_products.append(tag.text)
             for tag in soup.find_all(["span"],class_=["product-price"]):
-                all_prices.append(tag.text)
+                all_prices.append(str(tag.text).replace("DZD",""))
 
             next_link=soup.find(["a"],id="next-page-btn")
             

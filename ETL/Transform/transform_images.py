@@ -5,8 +5,7 @@ import pandas as pd
 import re
 import os
 
-def extract_ocr(ENV_KEYS:Dict[str,str|None]) -> None:
-    path=ENV_KEYS.get("IMAGES_PATH")
+def transform_ocr(path: str) -> None:
     orders_data=[]
     files=[file for file in os.listdir(path) if file.lower().startswith("order")]
     files.sort()
@@ -20,7 +19,7 @@ def extract_ocr(ENV_KEYS:Dict[str,str|None]) -> None:
 
         text=pytesseract.image_to_string(image,config="--psm 6 -c preserve_interword_spaces=1")
 
-        data=parse_text(text)
+        data=parse_text(text.replace('$','S'))
         orders_data.append(data)
     
     dataframe=pd.DataFrame(orders_data)

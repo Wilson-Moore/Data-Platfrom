@@ -1,15 +1,9 @@
-from typing import Dict
 import mysql.connector
 import pandas as pd
 
-def extract_erp(ENV_KEYS:Dict[str,str|None]) -> None:
+def extract_erp(host: str,database: str,user: str,password: str) -> None:
     try:
-        connection=mysql.connector.connect(
-            host=ENV_KEYS.get("DB_HOST"),
-            database=ENV_KEYS.get("DB_NAME"),
-            user=ENV_KEYS.get("DB_USERNAME"),
-            password=ENV_KEYS.get("DB_PASSWORD")
-        )
+        connection=mysql.connector.connect(host=host,database=database,user=user,password=password)
         
         dataframe=pd.read_sql("SHOW TABLES",connection)
     
