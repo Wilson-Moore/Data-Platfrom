@@ -1,0 +1,13 @@
+Store_ID,Store_Name,City_Name,Region,Avg_Monthly_Target
+1,TechStore Alger Centre,Alger,North,
+2,TechStore Oran Bahia,Oran,West,
+3,TechStore Constantine Cirta,Constantine,East,
+4,TechStore Annaba Coast,Annaba,East,
+5,TechStore Setif Park,Setif,East,
+6,TechStore Bejaia Port,Bejaia,North,
+7,TechStore Tlemcen Ville,Tlemcen,West,
+8,TechStore Skikda Centre,Skikda,East,
+9,TechStore Guelma 8 Mai,Guelma,East,
+10,TechStore Biskra Ziban,Biskra,South,
+11,TechStore Ouargla Sud,Ouargla,South,
+12,TechStore Ghardaia Oasis,Ghardaia,South,
