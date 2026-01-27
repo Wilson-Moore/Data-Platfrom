@@ -6,7 +6,7 @@ from .create_dw import create_dw_schema
 
 DB_PATH = Path("techstore_dw.db")
 
-STAGING = Path("staging/database")
+STAGING = Path("staging")
 PRODUCTS_CSV   = STAGING / "table_products.csv"
 STORES_CSV     = STAGING / "table_stores.csv"
 CUSTOMERS_CSV  = STAGING / "table_customers.csv"

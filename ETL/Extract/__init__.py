@@ -23,5 +23,5 @@ def extract(ENV_KEYS: Dict[str, str | None]) -> None:
     print("DONE EXTRACTING LOCAL FILES")
 
     print("EXTRACTING IMAGES")
-    extract_ocr('staging')
+    extract_ocr()
     print("DONE EXTRACTING LOCAL FILES")
